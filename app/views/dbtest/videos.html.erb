@@ -1,0 +1,8 @@
+<h1>Listing Videos</h1>
+
+<% @videos.each do |video| %>
+        movie = FFMPEG::Movie.new(video.directory)
+        movie.transcode("output.mp4","-vcodec copy -acodec copy -c:s mov_text test.mp4 -y" )
+        <%= video_tag "output.mp4", :size => "320x240", :controls => true %>
+<% end %>
+

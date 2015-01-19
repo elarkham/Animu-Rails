@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  show_id: 
+  status: MyText
+  dir: MyText
+  grp: MyText
+
+two:
+  name: MyText
+  show_id: 
+  status: MyText
+  dir: MyText
+  grp: MyText
