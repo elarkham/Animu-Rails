@@ -3,13 +3,18 @@ Rails.application.routes.draw do
 
   resources :shows
 
-  get 'dbtest/videos'
+  get 'home' =>'static_pages#home'
+
+  get 'current_season' => 'static_pages#current_season'
+
+  get 'archive' => 'static_pages#archive'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'application#hello'
+   root 'static_pages#home'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

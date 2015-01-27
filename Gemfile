@@ -9,6 +9,7 @@ gem 'turbolinks',           '2.3.0'
 gem 'jbuilder',             '2.2.3'
 gem 'sdoc',                 '0.4.0', group: :doc
 gem 'streamio-ffmpeg'
+gem 'bootstrap-sass', :git => 'https://github.com/twbs/bootstrap-sass.git', :branch => 'next'
 
 group :development, :test do
     gem 'sqlite3',     '1.3.9'

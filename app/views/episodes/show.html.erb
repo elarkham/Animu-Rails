@@ -6,26 +6,12 @@
 </p>
 
 <p>
-  <strong>Show:</strong>
-  <%= @episode.show %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @episode.status %>
-</p>
-
-<p>
-  <strong>Dir:</strong>
-  <%= @episode.dir %>
-</p>
-
-<p>
   <strong>Grp:</strong>
   <%= @episode.grp %>
 </p>
-<video autobuffer="autobuffer" controls="controls" src="<%= @episode.dir %>" >
-    <track kind="subtitles" srclang="en" src="/videos/sub.vtt" default>
+
+<video autobuffer="autobuffer" controls="controls" src="<%= @path %>" >
+        <track kind="subtitles" srclang="en" src="<%= @subpath %>" default>
 </video>
 
 <%= link_to 'Edit', edit_episode_path(@episode) %> |

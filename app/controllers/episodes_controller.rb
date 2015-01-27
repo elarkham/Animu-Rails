@@ -12,8 +12,28 @@ class EpisodesController < ApplicationController
   def show
     @episodes = Episode.all
     #@episode.convert_to_mp4 '/home/ethan/src/video_app/app/assets/videos/archive/Fate-stay night: Unlimited Blade Works/[HorribleSubs] Fate Stay Night - Unlimited Blade Works - 00 [720p].mkv'
-    #@episode.convert_to_mp4 "#{@episode.dir}"
-    @episode.rip_to_webvtt "#{Rails.root}/public#{@episode.dir}"
+    if File.extname( @episode.dir ) == ".mkv" and @episode.grp == "HorribleSubs"
+        @episode.convert_to_horrible "#{Rails.root}/public#{@episode.dir}"
+        @episode.rip_to_webvtt "#{Rails.root}/public#{@episode.dir}"
+        @path="/videos/tmp/output.mp4"
+        @subpath="/videos/tmp/sub.vtt"
+    elsif File.extname( @episode.dir ) == ".mp4" and @episode.grp == "DeadFish"
+        @path="#{@episode.dir}"
+        @subpath="/videos/tmp/blank.vtt"
+    elsif File.extname( @episode.dir ) == ".mp4" and @episode.grp == "BakedFish"
+        @path="#{@episode.dir}"
+        @subpath="/videos/tmp/blank.vtt"
+    elsif File.extname( @episode.dir ) == ".mkv" and @episode.grp == "Exiled-Destiny"
+        @episode.convert_to_mp4 "#{Rails.root}/public#{@episode.dir}"
+        @episode.rip_to_webvtt "#{Rails.root}/public#{@episode.dir}"
+        @path="/videos/tmp/output.mp4"
+        @subpath="/videos/tmp/sub.vtt"
+    elsif File.extname( @episode.dir ) == ".mkv" and @episode.grp == "Coalgirls"
+        @episode.convert_to_coalgirls "#{Rails.root}/public#{@episode.dir}"
+        @episode.rip_to_webvtt "#{Rails.root}/public#{@episode.dir}"
+        @path="/videos/tmp/output.mp4"
+        @subpath="/videos/tmp/sub.vtt"
+    end
   end
 
   # GET /episodes/new

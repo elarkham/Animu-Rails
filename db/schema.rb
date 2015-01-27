@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150119183846) do
+ActiveRecord::Schema.define(version: 20150122040026) do
 
   create_table "episodes", force: :cascade do |t|
     t.text     "name"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20150119183846) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "poster"
+    t.string   "dir"
   end
 
 end
