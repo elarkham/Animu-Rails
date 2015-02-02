@@ -84,6 +84,7 @@ p {
     text-align: center;
     font-size: 3.7em;
     color:#404040;
+    line-height: 1;
 }
 
 .name:visited{
@@ -102,4 +103,31 @@ p {
      height: 243px;
      width: 168px;
 }
+/* forms */
 
+input, textarea, select, .uneditable-input {
+    border: 1px solid #bbb;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+input {
+    height: auto !important;
+}
+
+/* login */
+
+.login  {
+    
+    h1 {
+        color: #fff;
+        font-size: 3em;
+        letter-spacing: -2px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    label {
+        color: #fff
+    }
+    background-color:#3a333c
+}

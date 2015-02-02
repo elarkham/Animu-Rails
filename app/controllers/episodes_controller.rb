@@ -17,22 +17,9 @@ class EpisodesController < ApplicationController
         @episode.rip_to_webvtt "#{Rails.root}/public#{@episode.dir}"
         @path="/videos/tmp/output.mp4"
         @subpath="/videos/tmp/sub.vtt"
-    elsif File.extname( @episode.dir ) == ".mp4" and @episode.grp == "DeadFish"
+    elsif File.extname( @episode.dir ) == ".mp4" 
         @path="#{@episode.dir}"
         @subpath="/videos/tmp/blank.vtt"
-    elsif File.extname( @episode.dir ) == ".mp4" and @episode.grp == "BakedFish"
-        @path="#{@episode.dir}"
-        @subpath="/videos/tmp/blank.vtt"
-    elsif File.extname( @episode.dir ) == ".mkv" and @episode.grp == "Exiled-Destiny"
-        @episode.convert_to_mp4 "#{Rails.root}/public#{@episode.dir}"
-        @episode.rip_to_webvtt "#{Rails.root}/public#{@episode.dir}"
-        @path="/videos/tmp/output.mp4"
-        @subpath="/videos/tmp/sub.vtt"
-    elsif File.extname( @episode.dir ) == ".mkv" and @episode.grp == "Coalgirls"
-        @episode.convert_to_coalgirls "#{Rails.root}/public#{@episode.dir}"
-        @episode.rip_to_webvtt "#{Rails.root}/public#{@episode.dir}"
-        @path="/videos/tmp/output.mp4"
-        @subpath="/videos/tmp/sub.vtt"
     end
   end
 

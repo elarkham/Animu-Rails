@@ -10,7 +10,7 @@ class ShowsController < ApplicationController
   # GET /shows/1
   # GET /shows/1.json
   def show
-    @episodes = Episode.where( show_id: @show.id  )
+    @episodes = Episode.where( show_id: @show.id  ).order("name")
   end
 
   # GET /shows/new
