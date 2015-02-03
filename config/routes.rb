@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   get 'home' =>'static_pages#home'
   get 'current_season' => 'static_pages#current_season'
-  get 'archive' => 'static_pages#archive'
+  get 'series' => 'static_pages#series'
+  get 'ova' => 'static_pages#ova'
+  get 'movies' => 'static_pages#movies'
 
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'

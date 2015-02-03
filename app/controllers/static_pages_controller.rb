@@ -19,7 +19,15 @@ class StaticPagesController < ApplicationController
     @shows = Show.where( status: "current_season"  ).order("name")
   end
 
-  def archive
+  def series
     @shows = Show.where( status: "archive"  ).order("name")
+  end
+
+  def ova
+    @shows = Show.where( status: "ova"  ).order("name")
+  end
+
+  def movies
+    @shows = Show.where( status: "movie"  ).order("name")
   end
 end
