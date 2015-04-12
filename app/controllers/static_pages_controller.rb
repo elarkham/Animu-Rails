@@ -30,4 +30,16 @@ class StaticPagesController < ApplicationController
   def movies
     @shows = Show.where( status: "movie"  ).order("name")
   end
+
+  def random
+    @shows = Show.includes(:episodes).where( random: "episodic" )
+    @episodes = []
+    @shows.each do |show|
+        show.episodes.each do |episode|
+            @episodes << episode
+        end
+    end
+    @random = @episodes.sample
+    redirect_to controller: 'episodes', action: "show", id: @random.id
+  end
 end

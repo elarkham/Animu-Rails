@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   get 'home' =>'static_pages#home'
   get 'current_season' => 'static_pages#current_season'
+  get 'random' => 'static_pages#random'
   get 'series' => 'static_pages#series'
   get 'ova' => 'static_pages#ova'
   get 'movies' => 'static_pages#movies'
