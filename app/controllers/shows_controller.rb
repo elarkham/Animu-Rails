@@ -29,7 +29,7 @@ class ShowsController < ApplicationController
 
     respond_to do |format|
       if @show.save
-        format.html { redirect_to @show, notice: 'Show was successfully created.' }
+        format.html { redirect_to :shows, notice: 'Show was successfully created.' }
         format.json { render :show, status: :created, location: @show }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class ShowsController < ApplicationController
   def update
     respond_to do |format|
       if @show.update(show_params)
-        format.html { redirect_to @show, notice: 'Show was successfully updated.' }
+        format.html { redirect_to :shows, notice: 'Show was successfully updated.' }
         format.json { render :show, status: :ok, location: @show }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class ShowsController < ApplicationController
   def destroy
     @show.destroy
     respond_to do |format|
-      format.html { redirect_to shows_url, notice: 'Show was successfully destroyed.' }
+      format.html { redirect_to :shows, notice: 'Show was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -70,6 +70,6 @@ class ShowsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def show_params
-      params.require(:show).permit(:name, :status)
+      params.require(:show).permit(:name, :status, :random)
     end
 end

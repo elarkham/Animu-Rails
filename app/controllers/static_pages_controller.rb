@@ -1,8 +1,9 @@
 class StaticPagesController < ApplicationController
+  include StaticPagesHelper
   def home
     #Shows I added
     @newShows = Show.all.order("created_at DESC").limit(20)
-    
+
     #This Seasons Episodes
     @shows = Show.includes(:episodes).where( status: "current_season" )
     @episodes = []
@@ -32,14 +33,8 @@ class StaticPagesController < ApplicationController
   end
 
   def random
-    @shows = Show.includes(:episodes).where( random: "episodic" )
-    @episodes = []
-    @shows.each do |show|
-        show.episodes.each do |episode|
-            @episodes << episode
-        end
-    end
-    @random = @episodes.sample
+    #randomId defined in helper class
+    @random = randomId
     redirect_to controller: 'episodes', action: "show", id: @random.id
   end
 end

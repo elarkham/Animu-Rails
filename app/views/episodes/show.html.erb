@@ -8,8 +8,8 @@
   <%= @episode.grp %>
 </p>
 
-<video autobuffer="autobuffer" controls="controls" src="<%= @path %>" >
-        <track kind="subtitles" srclang="en" src="<%= @subpath %>" default>
+<video autoplay controls >
+    <source src="<%= @path %>" type="video/mp4">
 </video>
 
 <%= link_to 'Edit', edit_episode_path(@episode) %> |
