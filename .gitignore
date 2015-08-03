@@ -18,3 +18,7 @@
 /tmp
 
 /config/secrets.yml
+
+/vendor/bundle
+
+
