@@ -1,3 +1,5 @@
 # Rails-VideoApp
-Used to teach myself Ruby on Rails.
+###### Warning Bad Commit Messages Ahead!
+Used to teach myself Ruby on Rails and git.
+
 
